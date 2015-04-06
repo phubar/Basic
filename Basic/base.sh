@@ -18,3 +18,7 @@
 # git push http://github.com/phubar/Basic
 # git config --global push.default simple
 # git push --set-upstream http://github.com/phubar/Basic master
+
+#check public IP
+# curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+# 5551234567@vtext.com
