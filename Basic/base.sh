@@ -5,6 +5,29 @@
 # echo "blacklist pcspkr" >> /etc/modprobe.d/pcspkr.conf
 # usermod -aG wheel "USER"
 
+# disable root login and specify protocol 2
+# add epel repo and install fail2ban
+# yum install -y epel-release
+# yum install -y fail2ban fail2ban-systemd
+# systemctl mask firewalld.service
+# systemctl enable iptables.service
+# systemctl enable ip6tables.service
+# systemctl stop firewalld.service
+# systemctl start iptables.service
+# systemctl start ip6tables.service
+Add to /etc/fail2ban/jail.d/sshd.local
+[ssh-iptables]
+enabled  = true
+filter   = sshd
+action   = iptables[name=SSH, port=ssh, protocol=tcp]
+logpath  = /var/log/secure
+maxretry = 5
+bantime = 86400
+
+systemctl enable fail2ban
+systemctl start fail2ban
+
+
 #github config
 # su - "user"
 # git config --global user.name "USER"
