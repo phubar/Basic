@@ -46,6 +46,7 @@ systemctl start fail2ban
 #check public IP
 # curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
 # 5551234567@vtext.com
+#| mail -s "Test" an@email.com
 
 #postfix config for gmail
 # echo "smtp.gmail.com    smtp_user:smtp_passwd" > /etc/postfix/sasl_passwd
@@ -63,4 +64,7 @@ systemctl start fail2ban
 # relayhost = smtp.gmail.com:587
 
 # postfix reload
+
+# vi /etc/aliases # add external mail address
+# newaliases
 
