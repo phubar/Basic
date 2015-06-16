@@ -5,12 +5,12 @@
 # yum -y groups install "Gnome Desktop"
 # systemctl set-default graphical.target
 #/etc/hostname
-
+#/etc/resolv.conf
 # echo "blacklist pcspkr" >> /etc/modprobe.d/pcspkr.conf
 # usermod -aG wheel "USER" #if admin req
 
 # ssh
-# disable root login and specify protocol 2
+# disable root login and specify protocol 2 /etc/ssh/sshd_config
 
 # fail2ban
 # add epel repo and install fail2ban
@@ -76,4 +76,3 @@ mount -t cifs -o username=x,password=x //host/share /mnt/share
 
 # vi /etc/aliases # add external mail address
 # newaliases
-
