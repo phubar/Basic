@@ -2,8 +2,12 @@
 
 #quick install
 # yum update
+# yum -y groups install "Gnome Desktop"
+# systemctl set-default graphical.target
+#/etc/hostname
+
 # echo "blacklist pcspkr" >> /etc/modprobe.d/pcspkr.conf
-# usermod -aG wheel "USER"
+# usermod -aG wheel "USER" #if admin req
 
 # ssh
 # disable root login and specify protocol 2
