@@ -4,6 +4,15 @@
 # yum update
 # yum -y groups install "Gnome Desktop"
 # systemctl set-default graphical.target
+# yum install thunderbird # requires epel repository
+
+#install flash
+# yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+# yum -y install http://linuxdownload.adobe.com/linux/x86_64/adobe-release-x86_64-1.0-1.noarch.rpm
+# yum install flash-plugin
+
+#install plex from plex.tv
+
 #/etc/hostname
 #/etc/resolv.conf
 # echo "blacklist pcspkr" >> /etc/modprobe.d/pcspkr.conf
