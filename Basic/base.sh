@@ -85,3 +85,13 @@ mount -t cifs -o username=x,password=x //host/share /mnt/share
 
 # vi /etc/aliases # add external mail address
 # newaliases
+
+#!/bin/bash
+
+_now=$(date +"%m%d%y")
+echo "Backup date: $_now" >/var/log/bkup"$_now".log
+#mount -t cifs -o username=user,password=password//192.168.0./share /cifs
+#tar -cvpzf /bkup/workblob"$_now".tgz /cifs/workblob  >>/var/log/bkup"$_now".log
+tar --exclude='/cifs/FRAPS' -cvpzf /bkup/share"$_now".tgz /cifs  >>/var/log/bkup"$_now".log
+umount /cifs
+echo complete >>/var/log/bkup"$_now".log
