@@ -13,6 +13,8 @@
 
 #install plex from plex.tv
 
+#yum install nmap
+
 #/etc/hostname
 #/etc/resolv.conf
 # echo "blacklist pcspkr" >> /etc/modprobe.d/pcspkr.conf
