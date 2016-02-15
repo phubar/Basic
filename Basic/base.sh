@@ -1,24 +1,13 @@
 #!/bin/bash
 
 #quick install
-# yum update
-# yum -y groups install "Gnome Desktop"
-# systemctl set-default graphical.target
-# yum install thunderbird # requires epel repository
-
-#install flash
-# yum -y install http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
-# yum -y install http://linuxdownload.adobe.com/linux/x86_64/adobe-release-x86_64-1.0-1.noarch.rpm
-# yum install flash-plugin
-
-#install plex from plex.tv
-
-#yum install nmap
-
+#/etc/sysconfig/network-scripts/ifcfg-xxx
 #/etc/hostname
 #/etc/resolv.conf
 # echo "blacklist pcspkr" >> /etc/modprobe.d/pcspkr.conf
-# usermod -aG wheel "USER" #if admin req
+# yum update
+# yum install screen
+# yum install nmap
 
 # ssh
 # disable root login and specify protocol 2 /etc/ssh/sshd_config
