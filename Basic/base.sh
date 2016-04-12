@@ -27,6 +27,7 @@
 # enabled  = true
 # filter   = sshd
 # action   = iptables[name=SSH, port=ssh, protocol=tcp]
+             sendmail-whois[name=SSH, dest=root, sender=fail2ban@localhost]
 # logpath  = /var/log/secure
 # maxretry = 5
 # bantime = 86400
