@@ -15,5 +15,4 @@ DNS1=
 sysctl -p /etc/sysctl.conf
 osinfo-query os # for  list of os-variants
 virt-install --connect qemu:///system -n centos7 --ram 1024 --disk /var/lib/libvirt/images/centos7.img,size=8 --vcpus 1 --os-type linux --os-variant Centos7.0 --graphics none --console pty,target_type=serial --location /var/lib/libvirt/images/CentOS-7-x86_64-Minimal-1511.iso --extra-args='console=ttyS0'
-
-
+virt-install --connect qemu:///system -n win7 --ram 1024 --disk /var/lib/libvirt/images/win7.img,size=8 --vcpus 1 --os-variant win7 --graphics vnc,listen=0.0.0.0 --noautoconsole --location /var/lib/libvirt/images/win7.iso
