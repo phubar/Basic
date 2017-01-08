@@ -7,6 +7,7 @@
 # echo "blacklist pcspkr" >> /etc/modprobe.d/pcspkr.conf
 # yum update
 # yum install screen
+# yum install yum-cron
 # yum install nmap
 
 # ssh
