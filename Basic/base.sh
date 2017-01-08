@@ -9,6 +9,13 @@
 # yum install screen
 # yum install yum-cron
 # yum install nmap
+# yum install dig
+# yum install bind-utils 
+yum install cyrus-sasl 
+yum install cyrus-sasl-plain
+yum install cyrus-sasl-md5
+yum install cyrus-sasl-gssapi
+yum install cyrus-sasl-scram
 
 # ssh
 # disable root login and specify protocol 2 /etc/ssh/sshd_config
