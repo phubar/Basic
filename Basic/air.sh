@@ -13,7 +13,7 @@ IFC="wlanX"
 AP="00:00:00:00:00:00"
 CHANNEL="X"
 
-MON=`cat /sys/class/net/$IFC/operstate`
+MON=`cat /sys/class/net/$IFC"mon"/operstate`
 if [ "$MON" != "unknown" ] ; then
         echo "enabling mon interface"
         airmon-ng start $IFC $CHANNEL
