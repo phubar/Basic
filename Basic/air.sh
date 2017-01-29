@@ -11,6 +11,8 @@
 # usage ./air.sh <input file>
 # input file list of MAC addresses
 
+[[ $(($RANDOM % 2 )) -eq 1 ]] || { echo "Not this time "; exit 1; } 
+
 IFC="wlanX"
 AP="00:00:00:00:00:00"
 CHANNEL="X"
