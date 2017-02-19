@@ -11,3 +11,8 @@ mysql -u user -p
 # USE myip;
 # create table iptable ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ip VARCHAR(20), ipdate DATE);
 # INSERT INTO iptable (ip,ipdate) VALUES ('0.0.0.0', '1970-01-01');
+
+#add user - should limit to specific db
+mysql> CREATE USER 'finley'@'localhost' IDENTIFIED BY 'some_pass';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'finley'@'localhost'
+    ->     WITH GRANT OPTION;
