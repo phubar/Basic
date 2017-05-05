@@ -18,7 +18,7 @@ yum install cyrus-sasl-gssapi
 yum install cyrus-sasl-scram
 
 # ssh
-# disable root login and specify protocol 2 /etc/ssh/sshd_config
+# port, disable root login and specify protocol 2 /etc/ssh/sshd_config
 
 # fail2ban
 # add epel repo and install fail2ban
